@@ -11,11 +11,11 @@ function MyApp({ Component, pageProps, router }) {
   const { layoutInfo } = pageProps;
   if (!layoutInfo) return <Component {...pageProps} />;
   return (
-    <AnimateSharedLayout>
-      <DarkNav {...{ layoutInfo }}>
-        <Component {...pageProps} />
-      </DarkNav>
-    </AnimateSharedLayout>
+    // <AnimateSharedLayout>
+    <DarkNav {...{ layoutInfo }}>
+      <Component {...pageProps} />
+    </DarkNav>
+    // </AnimateSharedLayout>
   );
 }
 

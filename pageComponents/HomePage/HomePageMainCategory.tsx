@@ -3,7 +3,6 @@ import { imageBuilder } from "@utils/sanityClient";
 import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const PicCircle = styled.div<{ bgImage: string }>`
   border-radius: 100%;
@@ -41,9 +40,9 @@ const HomePageMainCategory: React.FC<HPMCI> = ({
   return (
     <Link href={href}>
       <a className={className}>
-        <PicCircle bgImage={url} className="hover:shadow-lg">
-          <Image src={url} height={200} width={200} />
-        </PicCircle>
+        {/* <PicCircle bgImage={url} className="hover:shadow-lg"> */}
+        <Image src={url} height={200} width={200} />
+        {/* </PicCircle> */}
         <h3 className="font-title text-3xl text-earthMaroon text-center ">
           {title}
         </h3>
@@ -53,13 +52,3 @@ const HomePageMainCategory: React.FC<HPMCI> = ({
 };
 
 export default HomePageMainCategory;
-
-const ballVariants = {
-  initial: (index) => ({
-    opacity: 0,
-  }),
-  in: (i) => ({
-    opacity: 1,
-    transition: { delay: 0.5 * i, duration: 1 },
-  }),
-};

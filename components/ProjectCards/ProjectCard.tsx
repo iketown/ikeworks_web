@@ -1,9 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import JTree from "../../utils/JTree";
 import { imageBuilder } from "../../utils/sanityClient";
-import { getProjectTitleId } from "../../utils/animationIds";
 
 const ProjectCard: React.FC<SanityProjectI> = ({
   _id,
