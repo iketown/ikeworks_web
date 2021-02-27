@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: green;
+  --borderEarth: @apply border-earthMaroon;
+}
+
+.tooltip .tooltip-text {
+  @apply invisible  absolute z-50 inline-block rounded-lg;
+}
+
+.tooltip:hover .tooltip-text {
+  @apply visible;
+}
