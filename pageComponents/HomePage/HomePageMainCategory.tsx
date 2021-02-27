@@ -41,7 +41,7 @@ const HomePageMainCategory: React.FC<HPMCI> = ({
     <Link href={href}>
       <a className={className}>
         {/* <PicCircle bgImage={url} className="hover:shadow-lg"> */}
-        <Image src={url} height={200} width={200} />
+        <img src={url} height={200} width={200} />
         {/* </PicCircle> */}
         <h3 className="font-title text-3xl text-earthMaroon text-center ">
           {title}
