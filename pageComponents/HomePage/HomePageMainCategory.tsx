@@ -1,10 +1,9 @@
 import React from "react";
 import { imageBuilder } from "@utils/sanityClient";
-import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 
-const PicCircle = styled.div<{ bgImage: string }>`
+const PicCircle = styled.div`
   border-radius: 100%;
   overflow: hidden;
   height: 200px;
@@ -40,9 +39,9 @@ const HomePageMainCategory: React.FC<HPMCI> = ({
   return (
     <Link href={href}>
       <a className={className}>
-        {/* <PicCircle bgImage={url} className="hover:shadow-lg"> */}
-        <img src={url} height={200} width={200} />
-        {/* </PicCircle> */}
+        <PicCircle className="hover:shadow-lg">
+          <img src={url} height={200} width={200} />
+        </PicCircle>
         <h3 className="font-title text-3xl text-earthMaroon text-center ">
           {title}
         </h3>

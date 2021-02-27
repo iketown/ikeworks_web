@@ -1,5 +1,5 @@
 import groq from "groq";
-import sanityClient from "../utils/sanityClient";
+import sanityClient from "@utils/sanityClient";
 
 const devHomeQ = groq`
   {

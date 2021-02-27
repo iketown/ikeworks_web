@@ -9,7 +9,7 @@ import React, { memo, useState } from "react";
 import TechIconDisplay from "../components/TechIcons/TechIconDisplay";
 import TechIconRow from "../components/TechIcons/TechIconRow";
 import { useRenderCount } from "../hooks/useRenderCount";
-import JTree from "../utils/JTree";
+import JTree from "@utils/JTree";
 
 const listVariants = {
   hidden: { opacity: 0 },
@@ -21,7 +21,7 @@ const listVariants = {
   },
 };
 const listItemVariants = {
-  hidden: { opacity: 0, scale: 0.5 },
+  hidden: { opacity: 0.5, scale: 0.5 },
   visible: {
     opacity: 1,
     scale: 1,

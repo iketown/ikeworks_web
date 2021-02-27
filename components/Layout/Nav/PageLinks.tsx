@@ -22,20 +22,18 @@ const PageLinks: React.FC<PageLinksI> = ({ layoutInfo }) => {
       `hover:text-white px-3 py-2 rounded-md text-sm font-medium `
     );
   return (
-    <div className="hidden md:block">
-      <div className="ml-10 flex items-baseline space-x-4 capitalize">
-        {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-        {/* <ProjectsButton {...{ projects }} className={getClasses("projects")} /> */}
-        {["dev", "music", "design"].map((page) => {
-          return (
-            <Link key={page} href={`/${page}`}>
-              <a href="#" className={getClasses(page)}>
-                {page}
-              </a>
-            </Link>
-          );
-        })}
-      </div>
+    <div className="ml-10 flex items-baseline space-x-4 capitalize">
+      {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+      {/* <ProjectsButton {...{ projects }} className={getClasses("projects")} /> */}
+      {["dev", "music", "design"].map((page) => {
+        return (
+          <Link key={page} href={`/${page}`}>
+            <a href="#" className={getClasses(page)}>
+              {page}
+            </a>
+          </Link>
+        );
+      })}
     </div>
   );
 };

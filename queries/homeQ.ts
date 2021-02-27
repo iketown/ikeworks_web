@@ -1,5 +1,5 @@
 import groq from "groq";
-import sanityClient from "../utils/sanityClient";
+import sanityClient from "@utils/sanityClient";
 const projectsQ = groq`
  {
    "projects": *[_type == 'project'] | order(start_date desc),

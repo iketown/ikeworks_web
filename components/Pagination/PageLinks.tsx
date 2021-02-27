@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { PreviousButton, NextButton } from "./PageNumbers";
 import { useRouter } from "next/router";
-import JTree from "../../utils/JTree";
+import JTree from "@utils/JTree";
 
 interface ProjectPageLinksI {
   navInfo: NavInfo;

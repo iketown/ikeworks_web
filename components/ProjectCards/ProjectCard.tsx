@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { imageBuilder } from "../../utils/sanityClient";
+import { imageBuilder } from "@utils/sanityClient";
 
 const ProjectCard: React.FC<SanityProjectI> = ({
   _id,

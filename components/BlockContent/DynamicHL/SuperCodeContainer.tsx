@@ -1,5 +1,4 @@
 import React from "react";
-import JTree from "../../../utils/JTree";
 import SuperCode from "./SuperCode";
 import { useBlockCtx } from "../../../context/BlockCtx";
 

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import DynamicHL from "./DynamicHL";
 import { useProjectCtx } from "../../context/ProjectCtx";
-import JTree from "../../utils/JTree";
 import SuperCode2 from "./DynamicHL/SuperCode";
 
 interface CodePrismContainerI {
