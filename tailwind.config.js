@@ -1,7 +1,11 @@
-const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-  purge: ["./pages/**/*.js", "./components/**/*.js"],
+  purge: [
+    "./pages/**/*.tsx",
+    "./components/**/*.tsx",
+    "./pageComponents/**/*.tsx",
+    "./styles/**/*.css",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -17,17 +21,6 @@ module.exports = {
         earthMaroon: "#591C0B",
         earthGrey: "#DCE1E3",
         earthWater: "#5C5F58",
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            // code: {
-            //   color: "#0F0",
-            //   before: "",
-            //   after: "",
-            // },
-          },
-        },
       },
     },
   },
