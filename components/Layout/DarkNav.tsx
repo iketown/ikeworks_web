@@ -13,8 +13,8 @@ interface DarkNavI {
 
 const GreyBG = styled.div`
   position: relative;
-  background-image: url(/greyswirls.svg);
-  background-attachment: fixed;
+  /* background-image: url(/greyswirls.svg); */
+  /* background-attachment: fixed; */
 `;
 
 const avatarDiameter = 45;

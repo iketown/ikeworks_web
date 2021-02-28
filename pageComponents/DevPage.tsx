@@ -64,16 +64,7 @@ const DevPage = (props) => {
             >
               clear all
             </motion.button>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-xs text-gray-200 absolute "
-              style={{ bottom: -20, left: "50%", x: "-50%" }}
-            >
-              select icon to see affiliated projects
-            </motion.div>
-          )}
+          ) : null}
           <TechIconRow
             tech={tech}
             toggleDev={toggleDev}

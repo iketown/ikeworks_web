@@ -40,6 +40,7 @@
     "use-click-outside": "2.0.0"
   },
   "devDependencies": {
+    "@types/gtag.js": "0.0.4",
     "@types/node": "14.14.14",
     "@types/react": "17.0.0",
     "babel-plugin-styled-components": "1.12.0",
