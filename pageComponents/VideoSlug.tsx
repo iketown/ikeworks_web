@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState, useMemo } from "react";
-import YouTube from "react-youtube";
 import ReactPlayer from "react-player";
 import useDimensions from "react-cool-dimensions";
 import Link from "next/link";
@@ -41,6 +40,7 @@ const VideoSlug = (props) => {
           url={youtube_url}
           width={dimensions.width}
           height={divHeight}
+          controls
         />
       </div>
       <div className="flex justify-between">
