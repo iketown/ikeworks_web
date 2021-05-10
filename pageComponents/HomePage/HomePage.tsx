@@ -1,4 +1,3 @@
-import DarkNav from "@components/Layout/DarkNav";
 import { getHomeData, getLayoutInfo } from "@queries/homeQ";
 import { GetStaticProps } from "next";
 import Image from "next/image";

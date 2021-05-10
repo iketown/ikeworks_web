@@ -65,6 +65,15 @@ const serializers = {
         </Link>
       );
     },
+    root_link: ({ children, mark }) => {
+      console.log("root link", mark);
+      const { as, href, className } = mark;
+      return (
+        <Link {...{ as, href }}>
+          <a className={className}>{children}</a>
+        </Link>
+      );
+    },
   },
 };
 

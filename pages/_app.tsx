@@ -3,7 +3,7 @@ import "../styles/googFonts.css";
 import "../styles/globals.css";
 import "../components/BlockContent/prism.css";
 import "../components/BlockContent/highlightPrism.css";
-import DarkNav from "@components/Layout/DarkNav";
+import DarkNav, { DarkNavCustomLinks } from "@components/Layout/DarkNav";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
 import * as gtag from "@utils/gtag";
@@ -23,7 +23,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     }
   }, [router.events]);
 
-  const { layoutInfo } = pageProps;
+  const { layoutInfo, customLinks } = pageProps;
+  if (customLinks)
+    return (
+      <DarkNavCustomLinks links={customLinks}>
+        <Component {...pageProps} />
+      </DarkNavCustomLinks>
+    );
+
   if (!layoutInfo) return <Component {...pageProps} />;
   return (
     <DarkNav {...{ layoutInfo }}>

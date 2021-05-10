@@ -28,6 +28,7 @@ const TechIconRow: React.FC<TechIconRowI> = ({
           const isUnselected = !!chosenDevs.length;
           return (
             <motion.button
+              key={techInfo.slug}
               variants={iconVariants}
               animate={isSelected ? "large" : isUnselected ? "small" : "normal"}
               onClick={() => toggleDev(techInfo.slug)}

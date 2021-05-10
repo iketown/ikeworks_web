@@ -7,10 +7,6 @@ import styled from "styled-components";
 
 import PageLinks from "./Nav/PageLinks";
 
-interface DarkNavI {
-  layoutInfo: LayoutInfo;
-}
-
 const GreyBG = styled.div`
   position: relative;
   /* background-image: url(/greyswirls.svg); */
@@ -19,15 +15,15 @@ const GreyBG = styled.div`
 
 const avatarDiameter = 45;
 
-const DarkNav: React.FC<DarkNavI> = ({ layoutInfo, children }) => {
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
+interface DNNLi {
+  links: JSX.Element;
+}
+
+const DarkNavNoLinks: React.FC<DNNLi> = ({ links, children }) => {
   const mainRef = useRef<HTMLBodyElement>(null);
   const { scrollY } = useViewportScroll();
-  const rotateBG = useTransform(scrollY, (y) => y / 8);
   const { asPath } = useRouter();
-  const avatarImg =
-    layoutInfo?.me &&
-    imageBuilder.image(layoutInfo.me.avatar).width(avatarDiameter).url();
+
   return (
     <GreyBG key={"layout_wrap"} className="relative bg-earthGrey min-h-screen">
       <div
@@ -57,9 +53,7 @@ const DarkNav: React.FC<DarkNavI> = ({ layoutInfo, children }) => {
                     <span className="hidden xl:block ">xl</span>
                   </div> */}
                 </div>
-                <div className=" ">
-                  <PageLinks {...{ layoutInfo }} />
-                </div>
+                <div className=" ">{links}</div>
               </div>
             </div>
           </div>
@@ -77,6 +71,33 @@ const DarkNav: React.FC<DarkNavI> = ({ layoutInfo, children }) => {
       </main>
     </GreyBG>
   );
+};
+
+// Nav with something OTHER than Dev - Music - Design in the links area:
+interface DarkNavCustomI {
+  links: any;
+}
+export const DarkNavCustomLinks: React.FC<DarkNavCustomI> = ({
+  links,
+  children,
+}) => {
+  const { text, href } = links;
+  const linkEl = (
+    <Link href={href} as={href}>
+      <a className="text-white">{text}</a>
+    </Link>
+  );
+  return <DarkNavNoLinks {...{ links: linkEl, children }} />;
+};
+
+// Nav with Dev - Music - Design in the links area:
+interface DarkNavI {
+  layoutInfo: LayoutInfo;
+}
+
+export const DarkNav: React.FC<DarkNavI> = ({ layoutInfo, children }) => {
+  const links = <PageLinks {...{ layoutInfo }} />;
+  return <DarkNavNoLinks {...{ links, children }} />;
 };
 
 export default DarkNav;
