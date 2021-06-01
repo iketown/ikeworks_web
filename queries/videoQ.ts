@@ -28,3 +28,9 @@ export const projectVideoInfos = groq`
   synopsis
 }
 `;
+
+export const projectVideoIntro = groq`
+  *[_type == 'section' && references($project_id) && slug.current == $slug ][0] {
+"blocks": content[0].blocks
+}
+`;

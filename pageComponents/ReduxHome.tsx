@@ -1,7 +1,11 @@
 import React from "react";
 import { getLayoutInfo } from "@queries/homeQ";
 import { getDevHomeData } from "@queries/devQ";
-import { projectVideo, projectVideoInfos } from "@queries/videoQ";
+import {
+  projectVideo,
+  projectVideoInfos,
+  projectVideoIntro,
+} from "@queries/videoQ";
 import sanityClient from "@utils/sanityClient";
 import { SiRedux } from "react-icons/si";
 import { GetStaticProps } from "next";
@@ -9,12 +13,15 @@ import Link from "next/link";
 import BlockContent from "@components/BlockContent/BlockContent";
 
 const ReduxHome = (props) => {
-  const { videos } = props;
+  const { videos, introText } = props;
   return (
     <div>
       <h3 className="text-3xl text-gray-700 font-mono text-center mb-10">
         Reduce • Reuse • Redux
       </h3>
+      <div className="prose mx-auto mb-20">
+        <BlockContent blocks={introText?.blocks} />
+      </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 mt-4">
         {videos.map((video) => {
           return (
@@ -53,10 +60,14 @@ export default ReduxHome;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const customLinks = { text: "Reduce • Reuse • REDUX", href: "/redux" };
+  const project_id = "23b51cd8-cac3-43f0-a196-9ceae1d114ac"; // redux project
 
   const videos = await sanityClient.fetch(projectVideoInfos, {
-    project_id: "23b51cd8-cac3-43f0-a196-9ceae1d114ac", // redux project
+    project_id,
   });
-
-  return { props: { customLinks, videos } };
+  const introText = await sanityClient.fetch(projectVideoIntro, {
+    project_id,
+    slug: "redux-intro",
+  });
+  return { props: { customLinks, videos, introText } };
 };
